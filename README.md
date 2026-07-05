@@ -1,29 +1,31 @@
-# 🛍️ Myntra Customer Rating Prediction using Machine Learning
+# 🛍️ Myntra Customer Rating Prediction using Machine Learning & Power BI
 
 ## 📌 Project Overview
 
-Customer ratings significantly influence purchasing decisions on e-commerce platforms. Predicting customer ratings enables businesses to identify products that may receive poor reviews, optimize pricing strategies, improve seller performance, and enhance customer satisfaction.
+Customer ratings play a vital role in influencing purchasing decisions on e-commerce platforms. This project combines **Power BI** for interactive business analytics and **Machine Learning** for predictive modeling to analyze customer rating patterns and identify the key factors influencing product ratings on Myntra.
 
-This project develops and compares **Classification** and **Regression** machine learning models to predict customer ratings using product, pricing, seller, and category-related features.
-
----
-
-## 🎯 Business Problem
-
-The objective of this project is to build predictive models that can:
-
-- Predict customer rating categories (Low, Medium, High)
-- Predict the exact customer rating
-- Identify the factors influencing customer ratings
-- Compare multiple machine learning algorithms
-- Generate actionable business recommendations
+The project follows an end-to-end data analytics workflow, including data preprocessing, feature engineering, exploratory data analysis, statistical testing, interactive dashboard development, and predictive modeling using both **Classification** and **Regression** techniques.
 
 ---
 
-## 📂 Dataset
+# 🎯 Business Objectives
 
-- **Records:** 270,419 products
-- **Features:** 13 original features
+- Analyze customer rating patterns across products and sellers.
+- Identify significant factors influencing customer ratings.
+- Build classification models to predict rating categories.
+- Build regression models to predict exact customer ratings.
+- Compare multiple machine learning algorithms.
+- Generate actionable business recommendations.
+- Develop an interactive Power BI dashboard for business users.
+
+---
+
+# 📂 Dataset
+
+**Dataset Size**
+
+- **Rows:** 270,419
+- **Original Features:** 13
 
 ### Original Features
 
@@ -35,91 +37,117 @@ The objective of this project is to build predictive models that can:
 - Total Ratings
 - Seller
 - Product URL
+- Category
 - Sub-category
 - Gender
-- Category
 - Discount Percentage
 - Deep Discount Indicator
 
 ---
 
-## ⚙️ Feature Engineering
+# ⚙️ Feature Engineering
 
-### Feature Extraction
+## Feature Extraction
 
-The following features were extracted from existing data:
+The following features were extracted from the existing data:
 
 | Feature | Source | Purpose |
-|---------|--------|---------|
+|----------|--------|---------|
 | Category | Sub-category | Derived the main product category |
 | Gender | Product Name | Identified the target customer gender |
 | Sub-category | Product URL | Extracted product sub-category information |
 
-### Engineered Features
+---
+
+## Engineered Features
 
 | Feature | Description |
-|---------|-------------|
+|----------|-------------|
 | Discount Percentage | Percentage discount calculated from Price and MRP |
-| Deep Discount Indicator | Identifies heavily discounted products |
+| Deep Discount Indicator | Flags products with high discounts |
 | Category-Gender | Combines category and gender to capture customer targeting intent |
 | Seller Frequency | Number of products listed by each seller |
 | Sub-category Frequency | Number of products within each sub-category |
-| Rating Category | Converted ratings into Low, Medium, and High classes for classification |
+| Rating Category | Converts ratings into Low, Medium, and High categories for classification |
 
 ---
 
-## 🔍 Exploratory Data Analysis
+# 📊 Power BI Dashboard
 
-The exploratory analysis included:
+An interactive **Power BI dashboard** was developed to explore customer rating trends and business performance.
+
+### Dashboard Highlights
+
+- Product category analysis
+- Seller-wise product distribution
+- Customer rating distribution
+- Price and MRP analysis
+- Discount percentage analysis
+- Interactive filters and slicers
+
+### Dashboard Preview
+
+> *(Add your exported dashboard screenshot here)*
+
+```markdown
+![Power BI Dashboard](images/powerbi_dashboard.png)
+```
+
+---
+
+# 🔍 Exploratory Data Analysis
+
+EDA was performed to understand the characteristics of the dataset before model development.
+
+### Analysis Performed
 
 - Missing Value Analysis
 - Distribution of Numerical Features
 - Outlier Detection
 - Seller-wise Product Analysis
-- Rating vs Total Ratings Analysis
+- Rating vs Total Ratings
 - Correlation Analysis
 
 ### Key Insights
 
 - Most products received ratings between **4.0 and 4.5**.
-- Product prices and MRP exhibited right-skewed distributions.
-- Product popularity (Total Ratings) varied significantly across products.
-- Price and MRP showed a strong positive correlation.
-- Customer ratings had relatively weak linear correlations with individual numerical variables.
+- Product prices and MRP showed right-skewed distributions.
+- Product popularity varied significantly across sellers.
+- Price and MRP exhibited a strong positive correlation.
+- Customer ratings showed relatively weak linear correlations with individual numerical variables.
 
 ---
 
-## 📊 Statistical Testing
+# 📈 Statistical Testing
 
 Statistical tests were performed to validate assumptions and identify significant relationships between variables before model development.
-
-### Tests Performed
 
 | Statistical Test | Purpose |
 |------------------|---------|
 | **Shapiro-Wilk Test** | Evaluated whether numerical variables followed a normal distribution. |
-| **Spearman Rank Correlation** | Measured the monotonic relationship between numerical variables since the data was not normally distributed. |
+| **Spearman Rank Correlation** | Measured monotonic relationships between numerical variables since the data was not normally distributed. |
 | **Chi-Square Test** | Assessed the association between categorical variables and the customer rating category. |
 
 ### Key Findings
 
-- The **Shapiro-Wilk Test** indicated that the numerical variables were **not normally distributed**.
-- Therefore, the **Spearman Rank Correlation**, a non-parametric statistical test, was used instead of Pearson Correlation.
-- The **Chi-Square Test** was used to evaluate the relationship between categorical features and the target variable, helping identify statistically significant predictors.
-
+- Numerical variables were **not normally distributed**.
+- Therefore, **Spearman Rank Correlation** was used instead of Pearson Correlation.
+- Chi-Square testing identified statistically significant categorical predictors for customer rating classification.
 
 ---
 
-## 🤖 Machine Learning Models
+# 🤖 Machine Learning Models
 
-### Classification Models
+## Classification Models
 
 - Logistic Regression
 - Decision Tree Classifier
 - Random Forest Classifier
 - XGBoost Classifier
 
-### Regression Models
+---
+
+## Regression Models
 
 - Linear Regression
 - Decision Tree Regressor
@@ -136,7 +164,7 @@ Statistical tests were performed to validate assumptions and identify significan
 |--------|---------:|----------:|--------:|---------:|--------:|
 | Logistic Regression | 75.10% | 56.42% | 75.10% | 64.43% | 0.579 |
 | Decision Tree | 75.47% | 76.17% | 75.47% | 75.79% | 0.699 |
-| **Random Forest** ⭐ | **80.55%** | **78.97%** | **80.55%** | **79.21%** | **0.843** |
+| ⭐ Random Forest | **80.55%** | **78.97%** | **80.55%** | **79.21%** | **0.843** |
 | XGBoost | 76.29% | 72.22% | 76.29% | 69.32% | 0.787 |
 
 ---
@@ -147,62 +175,53 @@ Statistical tests were performed to validate assumptions and identify significan
 |--------|-----:|------:|---------:|
 | Linear Regression | 0.361 | 0.500 | 0.025 |
 | Decision Tree | 0.310 | 0.534 | -0.113 |
-| **Random Forest** ⭐ | **0.272** | **0.415** | **0.328** |
+| ⭐ Random Forest | **0.272** | **0.415** | **0.328** |
 | XGBoost | 0.325 | 0.456 | 0.191 |
 
 ---
 
-## 🌟 Feature Importance
+# 🌟 Feature Importance
 
-Feature importance analysis was performed using the best-performing Random Forest models.
+Feature importance analysis was performed using the best-performing **Random Forest** models.
 
-### Key Findings
+### Most Important Features
 
-The most influential features were:
-
-- Total Number of Ratings (`ratingTotal`)
+- Total Ratings (`ratingTotal`)
 - Seller Frequency
 - Discount Percentage
 - Price
 - MRP
 
-These results indicate that customer engagement and pricing-related factors have a stronger influence on customer ratings than product category alone.
+These results indicate that **customer engagement and pricing-related features** are the primary drivers of customer ratings.
 
 ---
 
-## 📌 Classification vs Regression
+# 📌 Classification vs Regression
 
-### Classification
-
-- Predicts rating categories (Low, Medium, High)
-- Best Model: **Random Forest Classifier**
-- Accuracy: **80.55%**
-
-### Regression
-
-- Predicts exact customer ratings
-- Best Model: **Random Forest Regressor**
-- R² Score: **0.328**
+| Classification | Regression |
+|----------------|------------|
+| Predicts customer rating category | Predicts exact customer rating |
+| Best Model: Random Forest Classifier | Best Model: Random Forest Regressor |
+| Accuracy: **80.55%** | R² Score: **0.328** |
 
 Both approaches consistently identified similar key predictors, demonstrating the importance of customer engagement and pricing features.
 
 ---
 
-## 💼 Business Recommendations
+# 💼 Business Recommendations
 
-Based on the analysis:
-
-- Improve quality for products predicted to receive low ratings.
-- Monitor seller performance using historical customer ratings.
-- Optimize pricing strategies for heavily discounted products.
+- Monitor products predicted to receive low ratings.
+- Improve pricing strategies for heavily discounted products.
 - Prioritize inventory from consistently high-performing sellers.
-- Use predictive models to identify products requiring proactive quality improvements.
+- Track seller performance using customer rating trends.
+- Use predictive models to proactively identify products requiring quality improvements.
 
 ---
 
-## 🛠️ Technologies Used
+# 🛠️ Technologies Used
 
 - Python
+- Power BI
 - Pandas
 - NumPy
 - Matplotlib
@@ -213,29 +232,43 @@ Based on the analysis:
 
 ---
 
-## 📁 Project Structure
+# 📁 Repository Structure
 
 ```
 Myntra-Customer-Rating-Prediction/
 │
-├── Myntra_Customer_Rating_Prediction.ipynb
 ├── README.md
 ├── requirements.txt
+├── Myntra_Customer_Rating_Prediction.ipynb
+├── Myntra_Dashboard.pbix
+│
 ├── data/
 │   └── myntra_dataset.csv
+│
 └── images/
+    ├── powerbi_dashboard.png
+    ├── correlation_heatmap.png
+    ├── classification_scorecard.png
+    ├── regression_scorecard.png
+    ├── feature_importance_classifier.png
+    └── feature_importance_regressor.png
 ```
 
+---
 
-## 📌 Future Improvements
-
-- Hyperparameter tuning using GridSearchCV and RandomizedSearchCV
-- Model deployment using Streamlit or Flask
-- Real-time customer rating prediction
-- Integration with recommendation systems
-- Explainable AI using SHAP or LIME
 
 ---
+
+# 🔮 Future Improvements
+
+- Hyperparameter tuning using GridSearchCV
+- Explainable AI using SHAP
+- Model deployment using Streamlit
+- Real-time customer rating prediction
+- Recommendation system integration
+
+---
+
 
 ## 👩‍💻 Author
 
