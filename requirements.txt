@@ -1,5 +1,10 @@
-
-streamlit
-pandas
 numpy
+pandas
+matplotlib
+seaborn
+scipy
 scikit-learn
+xgboost
+jupyter
+notebook
+ipykernel
