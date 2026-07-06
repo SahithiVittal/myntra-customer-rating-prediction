@@ -90,7 +90,7 @@ An interactive **Power BI dashboard** was developed to explore customer rating t
 > *(Add your exported dashboard screenshot here)*
 
 ```markdown
-![Power BI Dashboard](images/powerbi_dashboard.png)
+![Power BI Dashboard]([images/powerbi_dashboard.png)]
 ```
 
 ---
