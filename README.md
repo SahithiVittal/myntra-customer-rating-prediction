@@ -90,8 +90,6 @@ An interactive **Power BI dashboard** was developed to explore customer rating t
 ![Power BI Dashboard](images/powerbi_dashboard.png)
 ```
 
----
-
 # 🔍 Exploratory Data Analysis
 
 EDA was performed to understand the characteristics of the dataset before model development.
