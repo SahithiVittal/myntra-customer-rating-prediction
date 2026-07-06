@@ -87,7 +87,7 @@ An interactive **Power BI dashboard** was developed to explore customer rating t
 
 ### Dashboard Preview
 
-![Power BI Dashboard]([images/powerbi_dashboard.png)]
+![Power BI Dashboard](images/powerbi_dashboard.png)
 ```
 
 ---
